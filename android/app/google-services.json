@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1076941031873",
+    "project_id": "ttwigo-86d8d",
+    "storage_bucket": "ttwigo-86d8d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076941031873:android:60a2b86acb62986b6d4740",
+        "android_client_info": {
+          "package_name": "com.example.ttwigo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIaWqllThbrLFp4oUyqzePgpOnMvjyip0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
