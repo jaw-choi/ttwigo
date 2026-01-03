@@ -8,6 +8,7 @@ class ServiceCategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final categories = [
       {
+        "id": "moving_cleaning",
         "icon": Icons.local_shipping,
         "title": "이사/청소",
         "services": [
@@ -21,6 +22,7 @@ class ServiceCategoryScreen extends StatelessWidget {
         ]
       },
       {
+        "id": "install_repair",
         "icon": Icons.build,
         "title": "설치/수리",
         "services": [
@@ -31,6 +33,7 @@ class ServiceCategoryScreen extends StatelessWidget {
         ]
       },
       {
+        "id": "interior",
         "icon": Icons.chair_alt,
         "title": "인테리어",
         "services": [
@@ -41,6 +44,7 @@ class ServiceCategoryScreen extends StatelessWidget {
         ]
       },
       {
+        "id": "event_beauty",
         "icon": Icons.event,
         "title": "이벤트/뷰티",
         "services": [
@@ -50,6 +54,7 @@ class ServiceCategoryScreen extends StatelessWidget {
         ]
       },
       {
+        "id": "hobby_fitness",
         "icon": Icons.sports_basketball,
         "title": "취미/자기계발",
         "services": [
@@ -66,6 +71,8 @@ class ServiceCategoryScreen extends StatelessWidget {
         itemCount: categories.length,
         itemBuilder: (context, i) {
           final category = categories[i];
+          final categoryId = category["id"] as String;
+          final categoryLabel = category["title"] as String;
           return ExpansionTile(
             leading: Icon(category["icon"] as IconData, color: Colors.blue),
             title: Text(category["title"] as String,
@@ -77,7 +84,11 @@ class ServiceCategoryScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => QuoteProcessScreen(serviceName: service),
+                      builder: (_) => QuoteProcessScreen(
+                        serviceName: service,
+                        categoryId: categoryId,
+                        categoryLabel: categoryLabel,
+                      ),
                     ),
                   );
                 },

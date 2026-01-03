@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../services/auth_service.dart';
 import 'service_category_screen.dart';
+import '../services/user_role_service.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   Future<void> _signOut(BuildContext context) async {
     final authService = AuthService();
     await authService.signOut();
+    await UserRoleService.clearRole();
     if (context.mounted) context.go('/login');
   }
 
